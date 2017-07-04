@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitcoin Prices Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for ('static',
+    filename='lib/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static',
+    filename='lib/css/keen-dashboards.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <h1 class="logo">Stream 2 Project</h1>
+                <h4></h4>
+                <div class="btn-group btn-group-md" role="group" aria-label="...">
+                    <a href="index.html" class="btn btn-default" role="button">Home</a>
+                    <a href="average.html" class="btn btn-default" role="button">Average</a>
+                    <a href="compositeChart.html" class="btn btn-default" role="button">Composite</a>
+                    <a href="stacked.html" class="btn btn-default" role="button">Stacked</a>
+                    <a href="bubbleChart.html" class="btn btn-default" role="button">Bubble</a>
+                    <a href="https://dc-js.github.io/dc.js/" class="btn btn-default" role="button">DC.js</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <h3>Bitcoin Charts</h3>
+    <p>Bitcoin performance v gold and oil prices, volume and costs.</p>
+
+<div id="composite-chart"></div>
+</div>
+
+<body class="application">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">Bitcoin Prices Dashboard</a>
+      </div>
+    </div>
+  </div>
+  <div  id="outer" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <!-- Compare Market Prices By Year, Composite Chart -->
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Compare Prices
+              </div>
+              <div class="chart-stage">
+                <div id="newCompositeChart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Compare Market Prices By Year, Composite Chart -->
+
+
+          <!-- Bitcoin Market Price By Year, Bar Chart -->
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                MarketPrice
+              </div>
+              <div class="chart-stage">
+                <div id="price-by-year-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Bitcoin Market Price By Year, Bar Chart -->
+ 
+          <!-- Trade Volume By Year, line chart-->
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Trade Volume USD
+              </div>
+              <div class="chart-stage">
+                <div id="vol-by-year-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Trade Volume By Year line chart-->
+          
+          <!-- Total Transaction Amount By Year Pie Chart -->
+          <div class="col-sm-6">
+              <div class="chart-wrapper">
+                <div class="chart-title">
+                  Total Transactions By Year
+                </div>
+                <div class="chart-stage">
+                  <div id="total-transaction-by-year-chart"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Total Transaction Amount By Year Pie Chart -->
+ 
+          <!-- Total Bitcoin in Circulation Amount By Year Pie Chart -->
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Total in Circulation By Year
+              </div>
+              <div class="chart-stage">
+                <div id="total-circulation-by-year-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Total Bitcoin in Circulation Amount By Year Pie Chart -->
+        </div>
+      </div>
+ 
+      <!-- Market Capitalisation Row Chart -->
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Market Capitalisation
+          </div>
+          <div class="chart-stage">
+            <div id="Market-Cap"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Market Capitalisation Row Chart -->
+ 
+      <!-- Bitcoin Transactions Avg Vol By Year -->
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Avg Annual Transactions
+          </div>
+          <div class="chart-stage">
+            <div id="avgtrans-by-year-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Bitcoin Transactions Avg Vol By Year -->
+
+ 
+      <!-- Metric 1 Average Annual Transaction Number -->
+      <div class="col-sm-2">
+          <div class="chart-wrapper">
+          <div class="chart-title">
+            Average Annual Transactions
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="total-transactions"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Metric 1 Average Annual Transaction Number -->
+ 
+      <!-- Metric 2 Average Daily Transaction Number  -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Average Daily Transactions
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="total-daily-transactions"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Metric 2 Average Daily Transaction Number  -->
+
+      <!-- Metric 3 Total Transaction Fees in USD -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Total Transaction Fees in USD
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="total-transactions-fees"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Metric 3 Total Transaction Fees in USD-->
+
+      <!-- Metric 4 Total Transaction Fees in USD -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Cost per Transaction USD
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="cost-per-transaction"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Metric 4 Total Transaction Fees in USD -->
+
+    </div>
+  </div>
+  <hr>
+  <p class="small text-muted"> Data viz &#9829; from Code Institute</p>
+  <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+</body>
+</html> 
