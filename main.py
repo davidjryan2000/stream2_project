@@ -27,7 +27,7 @@ def donor_projects():
         'GOLD/USD':True, 'Brent Oil/USD': True,
     }
 
-    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    with MongoClient(MONGODB_URI) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
 
     projects = collection.find(projection=FIELDS, limit=55000)
