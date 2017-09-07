@@ -32,6 +32,7 @@ function makeGraphs(error, bitcoinJson) {
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .x(d3.time.scale().domain([2009,2017]))
         .elasticY(true)
+        .yAxisLabel("USDollars")
         .compose([
             dc.lineChart(newCompositeChart)
                 .dimension(yearDim)
@@ -47,30 +48,6 @@ function makeGraphs(error, bitcoinJson) {
                 .group(bitcoin_per_year, 'Bitcoin')
         ]);
 
-//     var comparePricesByYearChart = dc.compositeChart("#compare-prices-by-year-chart");
-   
-//    comparePricesByYearChart
-//         .width(800)
-//         .height(200)
-//         .margins({top: 10, right: 50, bottom: 30, left: 50})
-//         .x(d3.scale.ordinal()) 
-//         .xUnits(dc.units.ordinal) 
-//     //    .x(d3.time.scale().domain([2009,2017]))
-//         .elasticY(true)
-//         .compose([
-//             dc.lineChart(comparePricesByYearChart)
-//                 .dimension(yearDim)
-//                 .colors('black')
-//                 .group(oil_per_year, 'Oil'),
-//             dc.lineChart(comparePricesByYearChart)
-//                 .dimension(yearDim)
-//                 .colors('yellow')
-//                 .group(gold_per_year, 'Gold'),
-//             dc.lineChart(comparePricesByYearChart)
-//                 .dimension(yearDim)
-//                 .colors('green')
-//                 .group(bitcoin_per_year, 'Bitcoin')
-//         ]);
 
    //Bitcoin Market Price By Year
 
@@ -189,7 +166,7 @@ function makeGraphs(error, bitcoinJson) {
     
     //Bitcoin Transactions Avg Vol By Year
 
-    var bitcoin_transactions = yearDim.group().reduceSum(function (d) {
+    var bitcoin_transactions = ndx.yearDim.group().reduceSum(function (d) {
         return d["TotalTransactions"];});
 
     var trans_avg_volChart = dc.barChart("#avgtrans-by-year-chart");
