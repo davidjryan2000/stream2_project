@@ -166,7 +166,7 @@ function makeGraphs(error, bitcoinJson) {
     
     //Bitcoin Transactions Avg Vol By Year
 
-    var bitcoin_transactions = ndx.yearDim.group().reduceSum(function (d) {
+    /*var bitcoin_transactions = ndx.yearDim.group().reduceSum(function (d) {
         return d["TotalTransactions"];});
 
     var trans_avg_volChart = dc.barChart("#avgtrans-by-year-chart");
@@ -182,7 +182,7 @@ function makeGraphs(error, bitcoinJson) {
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .xAxisLabel("Year")
-        .yAxis().ticks(4);
+        .yAxis().ticks(4);*/
 
     //Total Transaction Fees in USD  
 
