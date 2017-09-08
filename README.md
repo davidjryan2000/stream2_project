@@ -6,7 +6,7 @@ Mike Bostock's work provided inspiration and knowledge. Data was sourced from Qu
 was to enable comparisons to be made between the value of Bitcoin, Oil and Gold for example.  In doing so the data was "cleaned" too much and has made the charts look a little straightforward.  
 The learning gained is to allow the richness of the data to come through on the graphs without overly simplifing the data.
 
-A base template was used to style the app - unrequired elements were removed and neccessary elements were adjusted to suit the needs of this project. Navbar tags and locations were adjusted along with the addition of relevant images.
+The Agency theme from startbootstrap.com (https://startbootstrap.com/template-overviews/agency/) was used to style the app - unrequired elements were removed and neccessary elements were adjusted to suit the needs of this project. Navbar tags and locations were adjusted along with the addition of relevant images.
 The colour palette of the template was maintained.An embedded Twitter feed from BitcoinMagazine was used to add richness to the presentation of app for UX purposes.  Background information pertaining to Bitcoin, sourced from The Telegraph was put into the FAQ section.
 A timeline was embedded from historyofbitcoin.org to provide strong visual presentation on the site.  Unfortunately once the site was deployed to Heroku there was a clash between the HTTPS of Heroku and HTTP of the embedded timeline.
 The SSL certifcate would not allow the timeline to be presented.  A number of workarounds were attempted including redirecting the link through google, but to no avail. The timeline was replaced with an embeded video from youtube explaining bitcoin instead.
