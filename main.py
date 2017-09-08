@@ -31,7 +31,7 @@ def donor_projects():
     }
 
     with MongoClient(MONGODB_URI) as conn:
-        collection = conn[DBS_NAME][COLLECTION_NAME]
+        collection = conn[bitcoin][project]
 
     projects = collection.find(projection=FIELDS, limit=55000)
 
