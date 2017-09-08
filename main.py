@@ -7,10 +7,13 @@ import os
 
 app = Flask(__name__)
 
+MONGODB_URI='heroku_v4s05s9f:kr3c5il6lceocgfc9ktem5bsuo@ds149122.mlab.com:49122/heroku_v4s05s9f'
+MONGO_DB_NAME='heroku_v4s05s9f'
+
 #MONGODB_HOST = 'localhost'
 #MONGODB_PORT = 27017
-MONGODB_URI = os.environ.get('MONGODB_URI')
-DBS_NAME = os.environ.get ('MONGO_DB_NAME','bitcoin')
+#MONGODB_URI = os.environ.get('MONGODB_URI')
+#DBS_NAME = os.environ.get ('MONGO_DB_NAME','bitcoin')
 COLLECTION_NAME = os.environ.get('MONGO_COLLECTION_NAME','project')
 
 @app.route("/")
