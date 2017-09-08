@@ -166,7 +166,7 @@ function makeGraphs(error, bitcoinJson) {
     
     //Bitcoin Transactions Avg Vol By Year
 
-    var bitcoin_transactions = ndx.yearDim.group().reduceSum(function (d) {
+    var bitcoin_transactions = yearDim.group().reduceSum(function (d) {
         return d["TotalTransactions"];});
 
     var trans_avg_volChart = dc.barChart("#avgtrans-by-year-chart");
