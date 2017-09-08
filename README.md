@@ -1,6 +1,6 @@
 # Stream 2 Project, Code Institute - David Ryan
 
-Introduction
+# Introduction
 This project is titled "The Rise of Bitcoin". It's build with Python in a Flask framework.  The data visualisation elements are built in javascript using d3.js, dc.js crossfilter.js and queue.js.
 Mike Bostock's work provided inspiration and knowledge. Data was sourced from Quandl and Bitcoin.org and manually put into a spreadsheet.  The thought process
 was to enable comparisons to be made between the value of Bitcoin, Oil and Gold for example.  In doing so the data was "cleaned" too much and has made the charts look a little straightforward.  
@@ -8,11 +8,8 @@ The learning gained is to allow the richness of the data to come through on the 
 
 A base template was used to style the app - unrequired elements were removed and neccessary elements were adjusted to suit the needs of this project. Navbar tags and locations were adjusted along with the addition of relevant images.
 The colour palette of the template was maintained.An embedded Twitter feed from BitcoinMagazine was used to add richness to the presentation of app for UX purposes.  Background information pertaining to Bitcoin, sourced from The Telegraph was put into the FAQ section.
-An timeline was embedded from historyofbitcoin.org to provide strong visual presentation on the site.  Unfortunately once the site was deployed to Heroku there was a clash between the HTTPS of Heroku and HTTP of the embedded timeline.
-The SSL certifcate would not allow the timeline to be presented.  A number of workarounds were attempted including redirecting the link through google, but to no avail. 
-The timeline was replaced with an embeded video from youtube explaining bitcoin instead.
-
-Finally 
+A timeline was embedded from historyofbitcoin.org to provide strong visual presentation on the site.  Unfortunately once the site was deployed to Heroku there was a clash between the HTTPS of Heroku and HTTP of the embedded timeline.
+The SSL certifcate would not allow the timeline to be presented.  A number of workarounds were attempted including redirecting the link through google, but to no avail. The timeline was replaced with an embeded video from youtube explaining bitcoin instead.
 
 
 
@@ -43,7 +40,7 @@ A Python micro-framework that was used to serve the data and render the HTML pag
 A Python file name threatened_species.py renders a graphs.html template and builds a web server using pymongo to interact with MongoDB
 
 #### MongoDB database
-NoSQL database that converts and presents data in JSON format. The dataset resource was downloaded as a csv file from [here](https://stats.oecd.org/Index.aspx?DataSetCode=WILD_LIFE#) - it had many rows of aggregate data i.e. one row that was the product of three other rows, so it was cleaned and sorted in RoboMongo before being used.
+NoSQL database that converts and presents data in JSON format. The dataset was compiled on a spreadsheet and saved on as a csv file. It had many rows of aggregate data i.e. one row that was the product of three other rows, so it was cleaned and sorted in RoboMongo before being used.
 
 #### Queue.js
 An asynchronour helper library for JavaScript
