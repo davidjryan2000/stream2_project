@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css')}}">
   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
   <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+  <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
+
 
 </head>
 
@@ -111,7 +113,7 @@
               <p><a href="www.telegraph.co.uk/technology/2017/08/25/bitcoin-price-rises-near-record-value-long-will-last/">Ref: Telegraph</a></p>
             </div>
             <div class="col-sm-6">
-            <a class="twitter-timeline" href="https://twitter.com/BitcoinMagazine" data-tweet-limit="3">Tweets by BitcoinMagazine</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" href="https://twitter.com/BitcoinMagazine" data-tweet-limit="2">Tweets by BitcoinMagazine</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
           </div>
         </div>
@@ -129,22 +131,23 @@
             <h2 class="section-heading">Video</h2>
                 <h3 class="section-subheading text-muted">Resources for gaining Bitcoin Knowledge</h3>
           </div>
-        <div class="video row col-sm-6">
-          
 
-          <iframe src="https://player.vimeo.com/video/187382945" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          <p><a href="https://vimeo.com/187382945">The Rise &amp; Rise of Bitcoin</a> from <a href="https://vimeo.com/user57851693">Its BC</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-          
-        </div> 
-        
-        <div class="padding-top-x70"></div>
+          <div class="videoWrapper">
+            <div class="video row col-sm-6">
+              <iframe src="https://player.vimeo.com/video/187382945" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              <p><a href="https://vimeo.com/187382945">The Rise &amp; Rise of Bitcoin</a> from <a href="https://vimeo.com/user57851693">Its BC</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+            </div> 
+           </div>
 
-        <div class="video row col-sm-6">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/aApRdnjECrU?rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
-        </div> 
+          <div class="videoWrapper">
+            <div class="video row col-sm-6">
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/aApRdnjECrU?rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+            </div> 
+          </div>
+      </div>
     </section>
 
-<p></p>
+
 <br>
 <br>
   <!-- Charts-->
@@ -154,11 +157,12 @@
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">Charts</h2>
             <h3 class="section-subheading text-muted">Visual interpretation of the Rise of Bitcoin.</h3>
+            <button class="btn btn-xl" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
           </div>
         </div>
         <div class="container">
     <h3>Bitcoin Charts</h3>
-    <p>Bitcoin performance v gold (red) and oil prices (black), volume and costs.</p>
+    
 
 <div id="composite-chart"></div>
 </div>
@@ -169,7 +173,7 @@
       <div class="col-sm-12">
         <div class="row">
           <!-- Compare Market Prices By Year, Composite Chart -->
-          <div class="col-sm-12">
+          <div class="col-sm-12" data-step="1" data-intro="Bitcoin performance v gold (red) and oil prices (black), volume and costs." style="font-weight: normal" data-position="right">
             <div class="chart-wrapper">
               <div class="chart-title">
                 Growth of Bitcoin versus Gold and Oil since 2009
@@ -183,10 +187,10 @@
 
 
           <!-- Bitcoin Market Price By Year, Bar Chart -->
-          <div class="col-sm-12">
+          <div class="col-sm-12" data-step="2" data-intro="This chart indicates the MarketPrice of Bitcoin since 2009" style="font-weight: normal" data-position="right">
             <div class="chart-wrapper">
               <div class="chart-title">
-                This chart indicates the MarketPrice of Bitcoin since 2009
+                Market Price
               </div>
               <div class="chart-stage">
                 <div id="price-by-year-chart"></div>
@@ -196,10 +200,10 @@
           <!-- Bitcoin Market Price By Year, Bar Chart -->
  
           <!-- Trade Volume By Year, line chart-->
-          <div class="col-sm-12">
+          <div class="col-sm-12" data-step="3" data-intro="Trade Volumes of Bitcoin in US Dollars " style="font-weight: normal" data-position="right">
             <div class="chart-wrapper">
               <div class="chart-title">
-                Trade Volumes of Bitcoin in US Dollars 
+                 Bitcoin Volume USD
               </div>
               <div class="chart-stage">
                 <div id="vol-by-year-chart"></div>
@@ -209,10 +213,10 @@
           <!-- Trade Volume By Year line chart-->
           
           <!-- Total Transaction Amount By Year Pie Chart -->
-          <div class="col-sm-6">
+          <div class="col-sm-6" data-step="4" data-intro="Total Bitcoin Transactions By Year" style="font-weight: normal" data-position="right">
               <div class="chart-wrapper">
                 <div class="chart-title">
-                  Total Bitcoin Transactions By Year
+                  Bitcoin Transactions By Year
                 </div>
                 <div class="chart-stage">
                   <div id="total-transaction-by-year-chart"></div>
@@ -222,10 +226,10 @@
             <!-- Total Transaction Amount By Year Pie Chart -->
  
           <!-- Total Bitcoin in Circulation Amount By Year Pie Chart -->
-          <div class="col-sm-6">
+          <div class="col-sm-6" data-step="5" data-intro="Total Bitcoin in circulation By Year" style="font-weight: normal" data-position="right">
             <div class="chart-wrapper">
               <div class="chart-title">
-                Total Bitcoin in Circulation By Year
+                Bitcoin in Circulation
               </div>
               <div class="chart-stage">
                 <div id="total-circulation-by-year-chart"></div>
@@ -237,6 +241,7 @@
       </div>
  
       <!-- Market Capitalisation Row Chart -->
+    <div class="cap" data-step="6" data-intro="Growth of Market Cap of Bitcoin" style="font-weight: normal" data-position="right">
       <div class="col-sm-12">
         <div class="chart-wrapper">
           <div class="chart-title">
@@ -247,102 +252,104 @@
           </div>
         </div>
       </div>
+    </div>
       <!-- Market Capitalisation Row Chart -->
  
-      <!-- Bitcoin Transactions Avg Vol By Year -->
-      <div class="col-sm-12">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            Avg Annual Transactions - Click on the bars to get annual transaction details
+          <!-- Bitcoin Transactions Avg Vol By Year -->
+        <div class="trans" data-step="7" data-intro="Click on the bars to get annual transaction details" style="font-weight: normal" data-position="right">
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Avg Annual Transactions  
+              </div>
+              <div class="chart-stage">
+                <div id="avgtrans-by-year-chart"></div>
+              </div>
+            </div>
           </div>
-          <div class="chart-stage">
-            <div id="avgtrans-by-year-chart"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Bitcoin Transactions Avg Vol By Year -->
+          <!-- Bitcoin Transactions Avg Vol By Year -->
 
- 
-      <!-- Metric 1 Average Annual Transaction Number -->
-      <div class="col-sm-2">
-          <div class="chart-wrapper">
-          <div class="chart-title">
-            Average Annual Transactions
+    
+          <!-- Metric 1 Average Annual Transaction Number -->
+          <div class="col-sm-2">
+              <div class="chart-wrapper">
+              <div class="chart-title">
+                Average Annual Transactions
+              </div>
+              <div class="chart-stage" style="background: #33CC99;
+                position: relative;
+                font-size: 29px;
+                color: white;
+                vertical-align: middle;
+                text-align: center;
+                padding-top: 12px;
+                padding-bottom: 0px;">
+                <div id="total-transactions"></div>
+              </div>
+            </div>
           </div>
-          <div class="chart-stage" style="background: #33CC99;
-            position: relative;
-            font-size: 29px;
-            color: white;
-            vertical-align: middle;
-            text-align: center;
-            padding-top: 12px;
-            padding-bottom: 0px;">
-            <div id="total-transactions"></div>
+          <!-- Metric 1 Average Annual Transaction Number -->
+    
+          <!-- Metric 2 Average Daily Transaction Number  -->
+          <div class="col-sm-2">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Average Daily Transactions
+              </div>
+              <div class="chart-stage" style="background: #33CC99;
+                position: relative;
+                font-size: 29px;
+                color: white;
+                vertical-align: middle;
+                text-align: center;
+                padding-top: 12px;
+                padding-bottom: 0px;">
+                <div id="total-daily-transactions"></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- Metric 1 Average Annual Transaction Number -->
- 
-      <!-- Metric 2 Average Daily Transaction Number  -->
-      <div class="col-sm-2">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            Average Daily Transactions
-          </div>
-          <div class="chart-stage" style="background: #33CC99;
-            position: relative;
-            font-size: 29px;
-            color: white;
-            vertical-align: middle;
-            text-align: center;
-            padding-top: 12px;
-            padding-bottom: 0px;">
-            <div id="total-daily-transactions"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Metric 2 Average Daily Transaction Number  -->
+          <!-- Metric 2 Average Daily Transaction Number  -->
 
-      <!-- Metric 3 Total Transaction Fees in USD -->
-      <div class="col-sm-2">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            Total Transaction Fees in USD
+          <!-- Metric 3 Total Transaction Fees in USD -->
+          <div class="col-sm-2">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Total Transaction Fees in USD
+              </div>
+              <div class="chart-stage" style="background: #33CC99;
+                position: relative;
+                font-size: 29px;
+                color: white;
+                vertical-align: middle;
+                text-align: center;
+                padding-top: 12px;
+                padding-bottom: 0px;">
+                <div id="total-transactions-fees"></div>
+              </div>
+            </div>
           </div>
-          <div class="chart-stage" style="background: #33CC99;
-            position: relative;
-            font-size: 29px;
-            color: white;
-            vertical-align: middle;
-            text-align: center;
-            padding-top: 12px;
-            padding-bottom: 0px;">
-            <div id="total-transactions-fees"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Metric 3 Total Transaction Fees in USD-->
+          <!-- Metric 3 Total Transaction Fees in USD-->
 
-      <!-- Metric 4 Total Transaction Fees in USD -->
-      <div class="col-sm-2">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            Cost per Transaction USD
+          <!-- Metric 4 Total Transaction Fees in USD -->
+          <div class="col-sm-2">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Cost per Transaction USD
+              </div>
+              <div class="chart-stage" style="background: #33CC99;
+                position: relative;
+                font-size: 29px;
+                color: white;
+                vertical-align: middle;
+                text-align: center;
+                padding-top: 12px;
+                padding-bottom: 0px;">
+                <div id="cost-per-transaction"></div>
+              </div>
+            </div>
           </div>
-          <div class="chart-stage" style="background: #33CC99;
-            position: relative;
-            font-size: 29px;
-            color: white;
-            vertical-align: middle;
-            text-align: center;
-            padding-top: 12px;
-            padding-bottom: 0px;">
-            <div id="cost-per-transaction"></div>
-          </div>
+          <!-- Metric 4 Total Transaction Fees in USD -->
         </div>
-      </div>
-      <!-- Metric 4 Total Transaction Fees in USD -->
-
     </div>
   </div>   
    </section>
@@ -439,5 +446,6 @@
   <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
   <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+  <script src="{{url_for ('static', filename='lib/js/intro.js')}}" type="text/javascript"></script>
 </body>
 </html> 
