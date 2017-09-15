@@ -2,14 +2,13 @@
 
 # Introduction
 This project is titled "The Rise of Bitcoin". It's build with Python in a Flask framework.  The data visualisation elements are built in javascript using d3.js, dc.js crossfilter.js and queue.js.
-Mike Bostock's work provided inspiration and knowledge. Data was sourced from Quandl and Bitcoin.org and manually put into a spreadsheet.  The thought process
-was to enable comparisons to be made between the value of Bitcoin, Oil and Gold for example.  In doing so the data was "cleaned" too much and has made the charts look a little straightforward.  
+Mike Bostock's work provided inspiration and knowledge. Data was sourced from Quandl and Bitcoin.org and manually put into a spreadsheet.  The thought process is to demonstrate the growth of bitcoin using. Data was sourced to enable comparisons to be made between the value of Bitcoin, Oil and Gold for example.  In doing so the data was "cleaned" too much and has made the charts look a little straightforward.  
 The learning gained is to allow the richness of the data to come through on the graphs without overly simplifing the data.
 
 The Agency theme from startbootstrap.com (https://startbootstrap.com/template-overviews/agency/) was used to style the app - unrequired elements were removed and neccessary elements were adjusted to suit the needs of this project. Navbar tags and locations were adjusted along with the addition of relevant images.
 The colour palette of the template was maintained.An embedded Twitter feed from BitcoinMagazine was used to add richness to the presentation of app for UX purposes.  Background information pertaining to Bitcoin, sourced from The Telegraph was put into the FAQ section.
 A timeline was embedded from historyofbitcoin.org to provide strong visual presentation on the site.  Unfortunately once the site was deployed to Heroku there was a clash between the HTTPS of Heroku and HTTP of the embedded timeline.
-The SSL certifcate would not allow the timeline to be presented.  A number of workarounds were attempted including redirecting the link through google, but to no avail. The timeline was replaced with an embeded video from youtube explaining bitcoin instead.
+The SSL certifcate would not allow the timeline to be presented.  A number of workarounds were attempted including redirecting the link through google, but to no avail. The timeline was replaced with an two embeded videos from youtube explaining bitcoin instead. An onboarding tutorial was added to the chart section to explain the charts. It was built using intro.js and introjs.css which was downloaded from https://github.com/usablica/intro.js/tags.
 
 
 
@@ -29,6 +28,7 @@ The project has been deployed on Heroku here https://pristine-sequoia-50301.hero
     * dc.js
     * crossfilter.js
     * queue.js
+    * intro.js
 7. A dataset was compiled from data from Quandl and bitcoin.org
 
 ## Components
@@ -80,7 +80,7 @@ Follow the below instructions to get this project up & running on Mac (commands 
 
 
 ## Testing
-This Application tested my patience on numerous occassions.
+The app was repeated tested on local server and post deployment.
 
 
 
