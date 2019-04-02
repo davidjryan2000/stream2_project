@@ -37,7 +37,7 @@ The project has been deployed on Heroku here https://pristine-sequoia-50301.hero
 A Python micro-framework that was used to serve the data and render the HTML pages for this Application
 
 #### Python
-A Python file name threatened_species.py renders a graphs.html template and builds a web server using pymongo to interact with MongoDB
+A Python file name .py renders a graphs.html template and builds a web server using pymongo to interact with MongoDB
 
 #### MongoDB database
 NoSQL database that converts and presents data in JSON format. The dataset was compiled on a spreadsheet and saved on as a csv file. It had many rows of aggregate data i.e. one row that was the product of three other rows, so it was cleaned and sorted in RoboMongo before being used.
