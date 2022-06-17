@@ -13,7 +13,7 @@ Jinja2==2.9.6
 MarkupSafe==1.0
 more-itertools==3.2.0
 ndg-httpsclient==0.4.2
-numpy==1.13.0
+numpy==1.21.0
 pandas==0.20.2
 pyasn1==0.2.3
 pycparser==2.17
